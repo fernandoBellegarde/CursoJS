@@ -34,7 +34,7 @@ function iniciarSessao() {
     if (verificaIdade(idade)) {
         let senhaCriada = criarSenha();
         if (login(nome, senhaCriada)) {
-            let sorteio = prompt("Voce quer um numero par ou impar?");
+            let sorteio = prompt("Você quer um número par ou ímpar?").trim().toLowerCase();
             let numero = sortearNumero();
             alert(`Número sorteado: ${numero}`);
             if (numero % 2 === 0 && sorteio.toLowerCase() === "par") {
