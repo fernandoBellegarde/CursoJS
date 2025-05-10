@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(17, 64, 165);
+            color: white;
+            font: normal 10pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+   
+   <script>
+        document.write("Olá, Mundo!<br>");
+        document.write(navigator.appName + "<br>")
+        document.write(document.URL + "<br><br>")
+
+        let p1 = document.getElementsByTagName('p')[0];
+        document.write('Esta escrito assim: ' + p1.innerText + "<br>");
+        let p2 = document.getElementsByTagName('p')[1];
+        document.write('Esta escrito assim: ' + p2.innerHTML);
+        /*
+        let d = document.getElementById('msg');
+        d.style.background = 'green';
+        d.innerText = 'Estou aguardando...';
+        */          
+        let d2 = document.querySelector('div#msg'); // id #msg
+        d2.style.background = 'red';                // class .msg
+</script>
+</body>
+</html>
