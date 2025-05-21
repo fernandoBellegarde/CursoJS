@@ -10,39 +10,40 @@ const inputMensagem = document.getElementById("mensagem");
 const btnEnviar = document.getElementById("btnFormEnviar");
 const cadastros = document.getElementById("cadastros");
 
-btnClicar.addEventListener("click", function clicar() {
-    paragrafo.textContent = "Você clicou no botão2!";
-});
+function clicar() {
+  paragrafo.textContent = "Você clicou no botão2!";
+}
+
+btnClicar.addEventListener("click", clicar);
 
 btnClicar2.addEventListener("click", function clicar2() {
-    paragrafo.textContent = "8==============D";
+  paragrafo.textContent = "8==============D";
 });
 
 btnEnviar.addEventListener("click", function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const nome = inputNome.value;
-    const email = inputEmail.value;
-    const assunto = inputAssunto.value;
-    const mensagem = inputAssunto.value;
+  const nome = inputNome.value;
+  const email = inputEmail.value;
+  const assunto = inputAssunto.value;
+  const mensagem = inputAssunto.value;
 
-    if (!nome || !email || !assunto || !mensagem) {
-        paragrafo2.textContent = "Preencha todos os campos caralho";
-        paragrafo2.style.color = "red";
-        // paragrafo2.classList.add("mensagem-error"); ---> Adiciona a classe "mensagem-error" do css
-        return;
-    }
+  if (!nome || !email || !assunto || !mensagem) {
+    paragrafo2.textContent = "Preencha todos os campos caralho";
+    paragrafo2.style.color = "red";
+    // paragrafo2.classList.add("mensagem-error"); ---> Adiciona a classe "mensagem-error" do css
+    return;
+  }
 
-    const cardUsuario = document.createElement('div');
-    cardUsuario.innerHTML = `
+  const cardUsuario = document.createElement("div");
+  cardUsuario.innerHTML = `
         <h3>Nome: ${nome}</h3>
         <p>Email: ${email}</p>
     `;
 
-    cadastros.appendChild(cardUsuario);
+  cadastros.appendChild(cardUsuario);
 
-    // alert(`Nome: ${nome}\nEmail: ${email}\nAssunto: ${assunto}\nMensagem: ${mensagem}`);
+  // alert(`Nome: ${nome}\nEmail: ${email}\nAssunto: ${assunto}\nMensagem: ${mensagem}`);
 
-    fomr.reset(); // Limpa os campos do formulário
+  fomr.reset(); // Limpa os campos do formulário
 });
-
