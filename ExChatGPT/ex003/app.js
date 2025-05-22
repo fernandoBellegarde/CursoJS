@@ -1,11 +1,12 @@
-const botao = document.getElementById("botao");
-const res = document.getElementById("contador");
-let cliques = 0;
+const botao = document.getElementById("botaoToggle");
+const texto = document.getElementById("texto");
 
-function clicar() {
-  cliques++;
-
-  contador.innerHTML = `Cliques: ${cliques}`;
+function sigilo() {
+  if (texto.style.display === "flex") {
+    texto.style.display = "none";
+  } else {
+    texto.style.display = "flex";
+  }
 }
 
-botao.addEventListener("click", clicar);
+botao.addEventListener("click", sigilo);
