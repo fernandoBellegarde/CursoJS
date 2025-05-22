@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3f3f3;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0f65c2;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#cadastros {
+  margin-top: 30px;
+}
+
+#cadastros h2 {
+  margin-bottom: 10px;
+}
+
+#cadastros div {
+  background-color: #e6f2ff;
+  border-left: 6px solid #1e90ff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#paragrafo2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.baixa {
+  background-color: #d4edda;
+  border-left: 5px solid #28a745;
+}
+
+.media {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+}
+
+.alta {
+  background-color: #f8d7da;
+  border-left: 5px solid #dc3545;
+}
+
+.tarefa {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.btn-remover {
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-remover:hover {
+  background-color: #c82333;
+}
