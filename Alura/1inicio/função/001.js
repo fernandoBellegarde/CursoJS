@@ -1,9 +1,9 @@
 // parametros
 // retorno
 
-function exibirNomeEstudante(estudante) {
-  console.log(estudante);
+function exibirNomeEstudante(estudante, nota) {
+  console.log(`estudante: ${estudante}, Nota: ${nota}`);
 }
 
-exibirNomeEstudante("fernando");
-exibirNomeEstudante("ana");
+exibirNomeEstudante("fernando", 10);
+exibirNomeEstudante("ana", 3);
