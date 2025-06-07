@@ -14,7 +14,7 @@ console.log(alunos);
 console.log("-------------------------");
 
 const removidoF = alunos.pop(); // Remove o ultimo
-const removidoC = alunos.shift();
+const removidoC = alunos.shift(); // Remove o primeiro
 console.log(removidoF);
 console.log(removidoC);
 console.log(alunos);
