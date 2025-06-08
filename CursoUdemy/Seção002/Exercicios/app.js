@@ -22,7 +22,7 @@ function meuEscopo() {
     console.log(pessoas);
     resultado.innerHTML += `<p>${nome} ${sobrenome} ${peso} ${altura}</p>`;
 
-    form.reset(); // limpa os campos após envio
+    form.reset(); 
   }
 
   form.addEventListener("submit", recebeEventoForm);
