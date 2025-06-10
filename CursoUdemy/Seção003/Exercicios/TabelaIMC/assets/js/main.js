@@ -11,11 +11,23 @@ function finalizar(e) {
 
   if (!isNaN(peso) && !isNaN(altura) && peso > 0 && altura > 0) {
     const resultado = imc(peso, altura);
+    let classificacao = "";
 
-    if (imc > 40) {
-
+    if (resultado >= 40) {
+      classificacao = "Obesidade grau III";
+    } else if (resultado >= 35) {
+      classificacao = "Obesidade grau II";
+    } else if (resultado >= 30) {
+      classificacao = "Obesidade grau I";
+    } else if (resultado >= 25) {
+      classificacao = "Sobrepeso";
+    } else if (resultado >= 18.5) {
+      classificacao = "Peso ideal";
+    } else {
+      classificacao = "Abaixo do peso";
     }
-    res.innerHTML = `IMC = ${resultado.toFixed(2)} (${})`;
+
+    res.innerHTML = `IMC = ${resultado.toFixed(2)} (${classificacao})`;
   } else {
     res.innerHTML = `Digite apenas números válidos`;
   }
