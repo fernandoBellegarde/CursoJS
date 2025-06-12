@@ -15,3 +15,4 @@ const {
 } = pessoa;
 
 console.log(r, numero, endereco);
+console.log(pessoa.endereco.rua, pessoa.endereco.numero, pessoa.endereco);
