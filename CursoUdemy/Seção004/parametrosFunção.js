@@ -40,3 +40,16 @@ function ARRAY([valor1, valor2, valor3]) {
 }
 
 ARRAY(["Fernando", "Bell", 30]);
+console.log();
+
+// Parametro REST (resto)
+const conta = function (operador, acumulador = 1, ...numeros) {
+  for (let numero of numeros) {
+    if (operador === "+") acumulador += numero;
+    if (operador === "-") acumulador -= numero;
+    if (operador === "/") acumulador /= numero;
+    if (operador === "*") acumulador *= numero;
+  }
+  console.log(acumulador);
+};
+conta("+", 200, 20, 30, 40, 50, 60, 70);
