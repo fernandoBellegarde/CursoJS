@@ -22,10 +22,16 @@ let posts = [
 ];
 
 window.onload = () => {
+    carregarPosts();
     showPost();
     document.querySelector("#postForm").addEventListener("submit", addPost);
 
     document.querySelector('#postList').addEventListener('click', handleClick);
+
+    // localStorage.setItem("Nome", "Fulado")
+    // console.log(localStorage.getItem("Nome"))
+    // localStorage.removeItem("Nome")
+    // localStorage.clear()
 }
 
 const handleClick = (infosDoEvento) => {
@@ -53,7 +59,7 @@ function addPost(e){
     
     console.log(novoPost);
     posts.unshift(novoPost);
-
+    salvarPosts()
     showPost();
 };
 
@@ -81,6 +87,7 @@ function showPost(){
 function updatePost(index){
     const novoTexto = prompt('Edite o conteudo do post', posts[index].text);
     posts[index].text = novoTexto;
+    salvarPosts()
 
     showPost();
 };
@@ -91,3 +98,9 @@ function deletePost(index){
     showPost();
 };
 
+const salvarPosts = () => localStorage.setItem('posts', JSON.stringify(posts));
+
+const carregarPosts = () => {
+    const postsGuardados = localStorage.getItem('posts');
+    if (postsGuardados) posts = JSON.parse(postsGuardados);
+}
