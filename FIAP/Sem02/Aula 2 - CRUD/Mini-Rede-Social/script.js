@@ -23,7 +23,17 @@ let posts = [
 
 window.onload = () => {
     showPost();
-    document.querySelector("#postForm").addEventListener("submit", addPost)
+    document.querySelector("#postForm").addEventListener("submit", addPost);
+
+    document.querySelector('#postList').addEventListener('click', handleClick);
+}
+
+const handleClick = (infosDoEvento) => {
+    const action = infosDoEvento.target.dataset.action;
+    const index = infosDoEvento.target.dataset.index;
+
+    if (action === "Editar") updatePost(index);
+    else if (action === "Deletar") deletePost(index);
 }
 
 function addPost(e){
@@ -32,9 +42,8 @@ function addPost(e){
     const textoPost = document.querySelector("#postText").value;
     const categoriaPost = document.querySelector("#postCategory").value;
     const imagemPost = document.querySelector("#postImage").value;
-    const dataPost = new Date().toLocaleString()
+    const dataPost = new Date().toLocaleString();
 
-    
     const novoPost = {
         text: textoPost,
         category: categoriaPost,
@@ -42,17 +51,17 @@ function addPost(e){
         data: dataPost,
     }
     
-    console.log(novoPost)
-    posts.unshift(novoPost)
+    console.log(novoPost);
+    posts.unshift(novoPost);
 
-    showPost()
-}
+    showPost();
+};
 
 function showPost(){
-    const listPost = document.querySelector('#postList')
+    const listPost = document.querySelector('#postList');
     listPost.innerHTML = '';
 
-    posts.forEach(pegaItem => {
+    posts.forEach((pegaItem, i) => {
         const cardPost = document.createElement("div");
         cardPost.classList.add("card");
 
@@ -61,15 +70,24 @@ function showPost(){
         <img src="${pegaItem.image}"/>
         <p><strong>Categoria: </strong>${pegaItem.category}</p>
         <p><strong>Data e hora: </strong>${pegaItem.date}</p>
-        <button>Editar</button>
-        <button>Deletar</button>
-
+        <button data-action="Editar" data-index="${i}">Editar</button>
+        <button data-action="Deletar" data-index="${i}">Deletar</button>
         `
         listPost.append(cardPost);
 
     });
-}
+};
 
-function editPost(){}
+function updatePost(index){
+    const novoTexto = prompt('Edite o conteudo do post', posts[index].text);
+    posts[index].text = novoTexto;
 
-function deletePost(){}
+    showPost();
+};
+
+function deletePost(index){
+    const confirmar = confirm("Voce deseja realmente excluir")
+    if (confirmar) posts.splice(index, 1);
+    showPost();
+};
+

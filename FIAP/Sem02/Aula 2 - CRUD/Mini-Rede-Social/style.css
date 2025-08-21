@@ -89,8 +89,7 @@ li {
 }
 
 .card {
-    border: .325em solid black;
-    border-radius: 1em;
+    border-bottom: .125em solid black;
 }
 
 img {
